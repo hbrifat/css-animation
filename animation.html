@@ -7,17 +7,65 @@
 
     <style>
 
-            
+        @keyframes pingpong {
+            0%{
+                background-color: yellow;
+                left: 0;
+                top: 0;
+            }
+            25%{
+                top: 425px;
+                background-color: red;
+                transform: scale(.5);
+            }
+            50%{
+                top: 0;
+                background-color: yellow;
+                transform: scale(1);
+            }
+            75%{
+                top: 425px;
+                background-color: red;
+                transform: scale(.5);
+            }
+            100%{
+                background-color: yellow;
+                left: 600px;
+                top: 0;
+            }
+        }   
+        @keyframes change-bg {
+            0%{
+                background-color: white;
+            }
+            25%{
+                background-color: SandyBrown;
+            }
+            50%{
+                background-color: white;
+            }
+            75%{
+                background-color: sandybrown;
+            }
+            100%{
+                background-color: white;
+            }
+        }   
         .stage{
-            width: 300px;
-            height: 300px;
+            width: 700px;
+            height: 500px;
             background-color: antiquewhite;
+            animation: change-bg 15s ease-in-out 1s infinite alternate;
+            animation-play-state: running;
         }
         .ball{
             width: 100px;
             height: 100px;
             border-radius: 50%;
             background-color: brown;
+            animation: pingpong 15s ease-in-out 1s infinite alternate;
+            animation-play-state: running;
+            position: relative;
         }
     </style>
 
